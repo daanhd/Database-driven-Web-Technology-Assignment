@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+// daan was hier
 	<div id="wrapper">
 	
 		<div id="header">
@@ -51,7 +51,7 @@
 		<div class="clear"></div>
 			
 		<div id="footer">
-			<p>Design by Daan en Corné.</a></p>
+			<p>Design by Daan en Corné.</p>
 		</div>
 		
 	</div>
