@@ -10,7 +10,6 @@
 </head>
 
 <body>
-// daan was hier
 	<div id="wrapper">
 	
 		<div id="header">
