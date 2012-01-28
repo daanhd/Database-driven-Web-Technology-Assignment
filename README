@@ -1,0 +1,4 @@
+---------------
+Project outline
+---------------
+Who pays what? Financial transactions for groups is the subject for our project of this course. Often you are in a situation with your friends where something needs to be paid in advance. For example, a couple of students are having dinner with each other. There is one person who pays for all the groceries. At this moment the paid amount of money needs to be divided by everyone in the group. For this purpose we are going to design our website. Imagine this group is having dinner each week, every time someone else will pay. Each member of the group can enter their paid amount on the website. At the website the members will have an overview of the financial transactions. They can see if their individual balance is positive or negative. If the group decides - for example at the end of the month - to pay the ones with a positive balance, counters can be reset.
