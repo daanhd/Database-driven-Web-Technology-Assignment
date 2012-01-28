@@ -125,6 +125,19 @@ if ($submit)
 			</tr>
 			<tr>
 				<td>
+				Choose your group:
+				</td>
+				<td>
+					<select>
+  						<option>Group #1</option>
+  						<option>Group #2</option>
+  						<option>Group #3</option>
+    					<option>Group #4</option>
+    					<option>Group #5</option>
+					</select>
+				</td>
+			<tr>
+				<td>
 				Choose a password:
 				</td>
 				<td>
