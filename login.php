@@ -85,7 +85,7 @@ else
 			<div class="widget">
 				<h2>What?</h2>
 				<p>This website is created for our course Database-driven Web Technology. Basically we created a web application, which is connected to a MySQL Database.</p>
-				<p>If you have any questions, feel free to contact us, <a href:"mailto=s1683764@student.rug.nl">Daan</a> or <a href="mailto:c.j.c.van.willigen@student.rug.nl>Corné</a>.</p>
+				<p>If you have any questions, feel free to contact us, <a href="mailto:s1683764@student.rug.nl">Daan</a> or <a href="mailto:c.j.c.van.willigen@student.rug.nl">Corné</a>.</p>
 			</div>
 			
 		</div>
@@ -93,7 +93,7 @@ else
 		<div class="clear"></div>
 			
 		<div id="footer">
-			<p>Design by Daan en Corné.</a></p>
+			<p>Design by Daan en Corné.</p>
 		</div>
 		
 	</div>

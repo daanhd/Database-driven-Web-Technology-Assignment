@@ -33,6 +33,8 @@ $username = strtolower(strip_tags($_POST['username']));
 $password = strip_tags($_POST['password']);
 $repeatpassword = strip_tags($_POST['repeatpassword']);
 $date = date("Y-m-d");
+$bankaccount = strip_tags($_POST['bankaccount']);
+$group = $_POST['group'];
 
 if ($submit)
 {
@@ -52,7 +54,7 @@ if ($submit)
 
 //check for existance
 
-	if ($fullname&&$username&&$password&&$repeatpassword)
+	if ($fullname&&$bankaccount&&$username&&$group&&$password&&$repeatpassword)
 	{
 
 		if ($password==$repeatpassword)
@@ -64,6 +66,13 @@ if ($submit)
 			}
 				else
 				{
+				if (strlen($bankaccount)>12||strlen($bankaccount)<4)
+				{
+					echo "Bank account number must be between 4-12 characters";
+				}
+				else
+				{
+								
 					//check password length
 					if (strlen($password)>25||strlen($password)<6)
 					{
@@ -79,7 +88,7 @@ if ($submit)
 
 					$queryreg = mysql_query("
 					
-					INSERT INTO users VALUES ('','$fullname','$username','$password','$date')
+					INSERT INTO users VALUES ('','$fullname', '$bankaccount', '$username', '$group', '$password','$date')
 					
 					");
 					
@@ -87,7 +96,7 @@ if ($submit)
 					
 					}
 				
-		
+				}
 			}
 		}
 		else 
@@ -117,12 +126,33 @@ if ($submit)
 			</tr>
 			<tr>
 				<td>
+				Bank account number:
+				</td>
+				<td>
+				<input type='text' name='bankaccount' value='<?php echo $bankaccount; ?>'>
+				</td>
+			</tr>
+			<tr>
+				<td>
 				Choose a username:
 				</td>
 				<td>
 				<input type='text' name='username' value='<?php echo $username; ?>'>
 				</td>
 			</tr>
+			<tr>
+				<td>
+				Choose your group:
+				</td>
+				<td>
+					<select input type='select' name='group' value='<?php echo $group; ?>'>
+  						<option value='1'>Group #1</option>
+  						<option value='2'>Group #2</option>
+  						<option value='3'>Group #3</option>
+  						<option value='4'>Group #4</option>
+  						<option value='5'>Group #5</option>
+					</select>
+				</td>
 			<tr>
 				<td>
 				Choose a password:
