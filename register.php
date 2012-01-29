@@ -34,7 +34,7 @@ $password = strip_tags($_POST['password']);
 $repeatpassword = strip_tags($_POST['repeatpassword']);
 $date = date("Y-m-d");
 $bankaccount = strip_tags($_POST['bankaccount']);
-$group = $_POST['group'];
+$ID_group = $_POST['ID_group'];
 
 if ($submit)
 {
@@ -53,7 +53,7 @@ if ($submit)
 
 //check for existance
 
-	if ($fullname&&$bankaccount&&$username&&$group&&$password&&$repeatpassword)
+	if ($fullname&&$bankaccount&&$username&&$ID_group&&$password&&$repeatpassword)
 	{
 
 		if ($password==$repeatpassword)
@@ -87,7 +87,7 @@ if ($submit)
 
 					$queryreg = mysql_query("
 					
-					INSERT INTO users VALUES ('','$fullname', '$bankaccount', '$username', '$group', '$password','$date')
+					INSERT INTO users VALUES ('','$fullname', '$bankaccount', '$username', '$ID_group', '$password','$date')
 					
 					");
 					
@@ -146,15 +146,18 @@ if ($submit)
 				Choose your group:
 				</td>
 				<td>
+					
 					<?
 					$sql = "SELECT group_name FROM groups";
 						$result = mysql_query($sql);
 
-						echo "<select name='group_name'>";
+						//echo "<select name='group_name'>";
+						echo "<select input type='select' name='ID_group' value='$ID_group'>";
 						while ($row = mysql_fetch_array($result)) {
-						    echo "<option value='" . $row['group_name'] . "'>" . $row['group_name'] . "</option>";
+						    echo "<option value='" . $row['ID_group'] . "'>" . $row['group_name'] . "</option>";
 						}
 						echo "</select>";
+						
 					?>
 				</td>
 			<tr>
