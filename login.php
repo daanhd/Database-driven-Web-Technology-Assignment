@@ -35,9 +35,8 @@ $password = $_POST['password'];
 
 if ($username&&$password)
 {
-
-$connect = mysql_connect("localhost", "root", "root") or die("Couldn't connect!");
-mysql_select_db("dbweb") or die("Couldn't find database!");
+//connect to database
+include("db_connect_xqz20120129.php");
 
 $query = mysql_query("SELECT * FROM users WHERE username='$username'");
 
