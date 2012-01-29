@@ -39,8 +39,7 @@ $group = $_POST['group'];
 if ($submit)
 {
 	// connect to database
-	$connect = mysql_connect("localhost", "root", "root");
-	mysql_select_db("dbweb"); //select database
+	include("db_connect_xqz20120129.php");
 	
 	$namecheck = mysql_query("SELECT username FROM users WHERE username='$username'");
 	$count = mysql_num_rows($namecheck);
