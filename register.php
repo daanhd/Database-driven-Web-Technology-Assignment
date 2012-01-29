@@ -112,7 +112,9 @@ if ($submit)
 ?>
 <p>
 <html>
-
+<?php 
+	include("db_connect_xqz20120129.php");
+?>
 <form action 'register.php' method='POST'>
 	<table>
 			<tr>
@@ -144,13 +146,16 @@ if ($submit)
 				Choose your group:
 				</td>
 				<td>
-					<select input type='select' name='group' value='<?php echo $group; ?>'>
-  						<option value='1'>Group #1</option>
-  						<option value='2'>Group #2</option>
-  						<option value='3'>Group #3</option>
-  						<option value='4'>Group #4</option>
-  						<option value='5'>Group #5</option>
-					</select>
+					<?
+					$sql = "SELECT group_name FROM groups";
+						$result = mysql_query($sql);
+
+						echo "<select name='group_name'>";
+						while ($row = mysql_fetch_array($result)) {
+						    echo "<option value='" . $row['group_name'] . "'>" . $row['group_name'] . "</option>";
+						}
+						echo "</select>";
+					?>
 				</td>
 			<tr>
 				<td>
