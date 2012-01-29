@@ -34,6 +34,7 @@ $password = strip_tags($_POST['password']);
 $repeatpassword = strip_tags($_POST['repeatpassword']);
 $date = date("Y-m-d");
 $bankaccount = strip_tags($_POST['bankaccount']);
+$group = $_POST['group'];
 
 if ($submit)
 {
@@ -53,7 +54,7 @@ if ($submit)
 
 //check for existance
 
-	if ($fullname&&$bankaccount&&$username&&$password&&$repeatpassword)
+	if ($fullname&&$bankaccount&&$username&&$group&&$password&&$repeatpassword)
 	{
 
 		if ($password==$repeatpassword)
@@ -87,7 +88,7 @@ if ($submit)
 
 					$queryreg = mysql_query("
 					
-					INSERT INTO users VALUES ('','$fullname', '$bankaccount', '$username','$password','$date')
+					INSERT INTO users VALUES ('','$fullname', '$bankaccount', '$username', '$group', '$password','$date')
 					
 					");
 					
@@ -144,12 +145,12 @@ if ($submit)
 				Choose your group:
 				</td>
 				<td>
-					<select>
-  						<option>Group #1</option>
-  						<option>Group #2</option>
-  						<option>Group #3</option>
-    					<option>Group #4</option>
-    					<option>Group #5</option>
+					<select input type='select' name='group' value='<?php echo $group; ?>'>
+  						<option value='1'>Group #1</option>
+  						<option value='2'>Group #2</option>
+  						<option value='3'>Group #3</option>
+  						<option value='4'>Group #4</option>
+  						<option value='5'>Group #5</option>
 					</select>
 				</td>
 			<tr>
