@@ -146,15 +146,37 @@ echo "</table>";
     <th width="98"> <div align="center">ID_user</div></th>
     <th width="198"> <div align="center">comment</div></th>
     <th width="97"> <div align="center">value</div></th>
-    <th width="59"> <div align="center">paid</div></th>
+    <th width="59"> <div align="center">Group</div></th>
     <th width="71"> <div align="center">paid_date</div></th>
   </tr>
   <tr>
 	<td><div align="center"><input type="hidden" name="txtCustomerID" id="txtCustomerID" size="5"></div></td>
-	<td><input type="text" name="txtName" id="txtName" size="20"></td>
+	<td><input type="text" name="txtName" id="txtName" size="20" readonly="readonly"></td>
 	<td><input type="text" name="txtEmail" id="txtEmail" size="20"></td>
 	<td><div align="center"><input type="text" name="txtCountryCode" id="txtCountryCode" size="2"></div></td>
-	<td align="right"><input type="text" name="txtBudget" id="txtBudget" size="5"></td>
+	<td align="right">
+	
+	
+	
+	<?php
+
+	mysql_connect('localhost:8889', 'root', 'root');
+	mysql_select_db('webdb2');
+
+	
+
+	$sql = "SELECT * FROM groups ORDER BY ID_group DESC";
+
+		$result = mysql_query($sql);
+		echo "<form><select name='txtBudget' id='txtBudget' o>";
+		while ($row = mysql_fetch_array($result)) {
+		    echo "<option value='" . $row['ID_group'] . "'>" . $row['group_name'] . "</option>";
+		}
+		echo "</select></form>";
+
+		?>
+	
+	</td>
 	<td align="right"><input type="text" name="txtUsed" id="txtUsed" size="5"></td>
   </tr>
 </table>
