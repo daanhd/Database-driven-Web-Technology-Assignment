@@ -109,6 +109,35 @@ else
 	   }
 	</script>
 <body Onload="JavaScript:doCallAjax('LIST');">
+<?php
+
+$con = mysql_connect("localhost:8889","root","root");
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+mysql_select_db("webdb2", $con);
+
+
+$result = mysql_query("SELECT * FROM groups");
+
+echo "<table border='1'>
+<tr>
+<th>Group ID</th>
+<th>Group name</th>
+</tr>";
+
+while($row = mysql_fetch_array($result))
+  {
+  echo "<tr>";
+  echo "<td>" . $row['ID_group'] . "</td>";
+  echo "<td>" . $row['group_name'] . "</td>";
+  echo "</tr>";
+  }
+echo "</table>";
+
+?>
 <h1>Add Payment to Group</h1>
 <form name="frmMain">
 <table width="600" border="1">
