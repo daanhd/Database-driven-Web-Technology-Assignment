@@ -177,7 +177,7 @@ echo "</table>";
 		?>
 	
 	</td>
-	<td align="right"><input type="text" name="txtUsed" id="txtUsed" size="5"></td>
+	<td align="right"><input value="<? echo date('m/d/y'); ?>" type="text" name="txtUsed" id="txtUsed" size="15" ><? echo date("m/d/y");?></td>
   </tr>
 </table>
 <input type="button" name="btnAdd" id="btnAdd" value="Add" OnClick="JavaScript:doCallAjax('ADD');">
