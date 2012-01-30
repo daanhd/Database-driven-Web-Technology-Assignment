@@ -72,15 +72,28 @@ xmlhttp.send();
 </head>
 <body>
 <br />
+<a href="http://localhost:8888/webtech/Database-driven-Web-Technology-Assignment/insert_payment.php">insert payment</a>
+<br />
 <strong>Select group:</strong>
-<form>
-<select name="groups" onchange="showGroup(this.value)">
-<option value="">Select a group:</option>
-<option value="0">Eten</option>
-<option value="1">Bier</option>
-<option value="2">Etc</option>
-</select>
-</form>
+<?php
+
+mysql_connect('localhost:8889', 'root', 'root');
+mysql_select_db('webdb2');
+
+//$sql = "SELECT ID_group.Groups, paid.Payments FROM groups, payments WHERE ID_group.Groups = paid.Groups ";
+//$sql = "SELECT groups.ID_group, groups.group_name, payments.ID_group FROM groups RIGHT JOIN payments ON groups.ID_group=payments.ID_group";
+
+$sql = "SELECT * FROM groups ORDER BY ID_group DESC";
+
+	$result = mysql_query($sql);
+//selecteer groep, zie dan elke gebruiker in deze groep
+	echo "<form><select name='groups' onchange='showGroup(this.value)'>";
+	while ($row = mysql_fetch_array($result)) {
+	    echo "<option value='" . $row['ID_group'] . "'>" . $row['group_name'] . "</option>";
+	}
+	echo "</select></form>";
+
+	?>
 <br />
 <div id="txtHint"><b>Group info will be listed here.</b></div>
 
