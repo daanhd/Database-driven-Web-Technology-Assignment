@@ -87,7 +87,7 @@ if ($submit)
 
 					$queryreg = mysql_query("
 					
-					INSERT INTO users VALUES ('','$fullname', '$bankaccount', '$username', '$ID_group', '$password','$date')
+					INSERT INTO users VALUES ('','$fullname', '$bankaccount', '$username', '$group_id', '$password','$date')
 					
 					");
 					
@@ -147,18 +147,6 @@ if ($submit)
 				</td>
 				<td>
 					
-					<?
-					$sql = "SELECT group_name FROM groups";
-						$result = mysql_query($sql);
-
-						//echo "<select name='group_name'>";
-						echo "<select input type='select' name='ID_group' value='$ID_group'>";
-						while ($row = mysql_fetch_array($result)) {
-						    echo "<option value='" . $row['ID_group'] . "'>" . $row['group_name'] . "</option>";
-						}
-						echo "</select>";
-						
-					?>
 				</td>
 			<tr>
 				<td>
